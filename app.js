@@ -3,7 +3,7 @@ var cors = require('cors')
 const app = express();
 const path = require('path');
 const PORT = 8009;
-
+const mongo = require("./middlewares/connection")
 require('dotenv').config();
 
 app.use(cors())
