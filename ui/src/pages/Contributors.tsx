@@ -10,6 +10,12 @@ const contributors = [
     githubId: 'keerat666',
     role: 'Maintainer',
     avatar: 'https://avatars.githubusercontent.com/u/18071315?v=4',
+  },
+  {
+    name: 'Devansh Verma',
+    githubId: 'Devash422',
+    role: 'Contributor',
+    avatar: 'https://avatars.githubusercontent.com/u/65439049?v=4',
   }
 ];
 
