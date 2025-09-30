@@ -3,7 +3,7 @@
 [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-Friendly-orange.svg)](https://hacktoberfest.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Maintained by Sapien Team](https://img.shields.io/badge/maintained%20by-Sapien%20Team-blueviolet.svg)](./CONTRIBUTORS.md)
+
 
 Sapien is an **open-source Prompt Management & Discovery Platform**.  
 It allows you to **publish, rate, review, and organize prompts** with features like version control, private/public prompts, and a social layer for the AI community.  
