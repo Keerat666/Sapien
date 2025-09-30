@@ -6,11 +6,17 @@ import { Button } from '@/components/ui/button';
 
 const contributors = [
   {
-    name: 'Gurkeerat',
-    githubId: 'keerat666',
-    role: 'Maintainer',
-    avatar: 'https://avatars.githubusercontent.com/u/18071315?v=4',
-  }
+    name: "Gurkeerat",
+    githubId: "keerat666",
+    role: "Maintainer",
+    avatar: "https://avatars.githubusercontent.com/u/18071315?v=4",
+  },
+  {
+    name: 'Mehedi Hasan Khairul',
+    githubId: 'mehedi-hasan-khairul',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/55708248?v=4',
+  },
 ];
 
 const Contributors = () => {
