@@ -16,7 +16,7 @@ This project is a **monolith** containing both:
 ---
 
 ## ✨ Features
-- 🌐 Google/GitHub Login  
+- 🌐 GitHub Login  
 - 📝 Create, Edit, and Manage Prompts  
 - ⭐ Rate, Favorite & Comment on Prompts  
 - 🔍 Search & Filter with Trending and Starred views  
@@ -43,7 +43,9 @@ This project is a **monolith** containing both:
 ## 📦 Requirements
 - [Node.js 24 (via nvm)](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-```sh
+Create a free mongo DB cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) and get the connection string and add it to the `demo.env` file in the root of the project.Once done, rename the file from demo.env to .env.
+
+```
 nvm install 24
 nvm use 24
 # Clone the repo
