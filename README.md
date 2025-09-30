@@ -82,9 +82,4 @@ Thanks goes to these wonderful people:
 <a href="https://github.com/sapien/graphs/contributors"> <img src="https://contrib.rocks/image?repo=sapien" /> </a>
 
 ## 👤 Maintainer
-
 Built with ❤️ by Keerat
-
-- GitHub: [@keerat666](https://github.com/keerat666)
-- Contact: Please open an issue in this repository for support/queries.
-- More maintainers and contributors: see [CONTRIBUTORS.md](./CONTRIBUTORS.md)
