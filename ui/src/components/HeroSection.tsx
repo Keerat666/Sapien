@@ -56,9 +56,11 @@ const HeroSection = () => {
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
         </Link>
+        <Link to="/signup">
           <Button className="btn-glass text-lg px-8 py-4">
             Start Creating
           </Button>
+          </Link>
         </div>
 
         {/* Stats */}
