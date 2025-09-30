@@ -1,10 +1,15 @@
 # Contributors and Maintainers
 
-This project is maintained by the Sapien Team. Below are the current maintainers and how to reach us.
+This project is maintained by the Sapien Team. Below is the current list of contributors mirrored from the UI source (`ui/src/pages/Contributors.tsx`).
 
-## Maintainers
+## People
 
-- Keerat — GitHub: https://github.com/keerat666
+| Name | GitHub | Role | Avatar |
+|------|--------|------|--------|
+| Gurkeerat | [@keerat666](https://github.com/keerat666) | Maintainer | ![Gurkeerat](https://avatars.githubusercontent.com/u/18071315?v=4) |
+| Devansh Verma | [@Devash422](https://github.com/Devash422) | Contributor | ![Devansh Verma](https://avatars.githubusercontent.com/u/65439049?v=4) |
+
+If you update the list in `Contributors.tsx`, please mirror the change here in the same PR.
 
 ## Contact and Support
 
