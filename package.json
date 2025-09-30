@@ -1,0 +1,36 @@
+{
+    "name": "Autopilot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "nodemon app.js",
+        "start": "node ./bin/www"
+    },
+    "keywords": [
+        "Sapien"
+    ],
+    "author": "Keerat",
+    "license": "ISC",
+    "dependencies": {
+        "@admin-bro/express": "^3.1.0",
+        "@admin-bro/mongoose": "^1.1.0",
+        "cors": "^2.8.5",
+        "crypto": "^1.0.1",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-formidable": "^1.2.0",
+        "express-session": "^1.17.1",
+        "extract-json-from-string": "^1.0.1",
+        "mongoose": "^5.11.11",
+        "multer": "^1.4.2",
+        "mysql": "^2.18.1",
+        "nodemon": "^3.1.0",
+        "pg": "^8.11.2",
+        "prom-client": "^12.0.0",
+        "shortid": "^2.2.16",
+        "swagger-stats": "^0.99.1",
+        "swagger-ui-express": "^4.1.6",
+        "tslib": "^2.1.0"
+    }
+}
