@@ -63,7 +63,7 @@ const About = () => {
                   </Button>
                 </a>
                 <a 
-                  href="#" 
+                  href="https://gurkeerat.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                 >

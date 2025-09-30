@@ -6,29 +6,11 @@ import { Button } from '@/components/ui/button';
 
 const contributors = [
   {
-    name: 'John Doe',
-    githubId: 'johndoe',
-    role: 'Lead Developer',
-    avatar: 'https://github.com/johndoe.png',
-  },
-  {
-    name: 'Jane Smith',
-    githubId: 'janesmith',
-    role: 'Frontend Developer',
-    avatar: 'https://github.com/janesmith.png',
-  },
-  {
-    name: 'Mike Johnson',
-    githubId: 'mikejohnson',
-    role: 'Backend Developer',
-    avatar: 'https://github.com/mikejohnson.png',
-  },
-  {
-    name: 'Sarah Williams',
-    githubId: 'sarahwilliams',
-    role: 'UI/UX Designer',
-    avatar: 'https://github.com/sarahwilliams.png',
-  },
+    name: 'Gurkeerat',
+    githubId: 'keerat666',
+    role: 'Maintainer',
+    avatar: 'https://avatars.githubusercontent.com/u/18071315?v=4',
+  }
 ];
 
 const Contributors = () => {
@@ -88,7 +70,7 @@ const Contributors = () => {
               </p>
               <Button
                 size="lg"
-                onClick={() => window.open('https://github.com', '_blank')}
+                onClick={() => window.open('https://github.com/Keerat666/Sapien', '_blank')}
               >
                 <Github className="w-5 h-5 mr-2" />
                 Visit GitHub
