@@ -1,21 +1,5 @@
 const mongoose = require("mongoose");
 
-const SampleSchema = new mongoose.Schema(
-  {
-    input: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    output: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-  },
-  { _id: false }
-);
-
 const PromptSchema = new mongoose.Schema(
   {
     title: {
@@ -32,7 +16,12 @@ const PromptSchema = new mongoose.Schema(
     },
     content: {
       type: String,
-      required: [true, "Content is required"],
+      required: [true, "Prompt content is required"],
+      trim: true,
+    },
+    category: {
+      type: String,
+      required: [true, "Category is required"],
       trim: true,
     },
     tags: [
@@ -42,29 +31,36 @@ const PromptSchema = new mongoose.Schema(
         lowercase: true,
       },
     ],
-    samples: {
-      type: [SampleSchema],
-      validate: {
-        validator: function (v) {
-          return v.length <= 10;
-        },
-        message: "Cannot have more than 10 samples",
-      },
+    coverImage: {
+      type: String, // URL or path to uploaded image
+      default: null,
     },
-    modelCompatibility: [
+    resultType: {
+      type: String,
+      enum: ["text", "image", "video"],
+      required: [true, "Result type is required"],
+      default: "text",
+    },
+    sampleOutput: {
+      type: String,
+      trim: true,
+      default: null,
+    },
+    worksBestWith: [
       {
         type: String,
         enum: [
-          "gpt-4",
-          "gpt-3.5-turbo",
-          "claude-3",
-          "claude-2",
-          "palm-2",
-          "llama-2",
-          "mistral",
-          "gemini-pro",
+          "GPT-4",
+          "GPT-3.5",
+          "Claude-3",
+          "Claude-2",
+          "Gemini Pro",
+          "DALL-E 3",
+          "Midjourney",
+          "Stable Diffusion",
+          "RunwayML",
+          "Pika Labs",
         ],
-        required: true,
       },
     ],
     version: {
@@ -84,6 +80,18 @@ const PromptSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    views: {
+      type: Number,
+      default: 0,
+    },
+    likes: {
+      type: Number,
+      default: 0,
+    },
+    uses: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,
@@ -94,8 +102,11 @@ const PromptSchema = new mongoose.Schema(
 
 // Indexes for better query performance
 PromptSchema.index({ title: "text", description: "text", tags: "text" });
+PromptSchema.index({ category: 1 });
 PromptSchema.index({ tags: 1 });
 PromptSchema.index({ createdAt: -1 });
+PromptSchema.index({ likes: -1 });
+PromptSchema.index({ views: -1 });
 
 // Virtual for formatted version
 PromptSchema.virtual("versionString").get(function () {

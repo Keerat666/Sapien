@@ -1,6 +1,7 @@
 const express = require("express");
 var cors = require("cors");
 const mongoose = require("mongoose");
+const fs = require("fs");
 const app = express();
 const path = require("path");
 const PORT = 8009;
@@ -9,10 +10,19 @@ require("dotenv").config();
 // Import routes
 const promptRoutes = require("./routes/promptRoutes");
 
+// Create uploads directory if it doesn't exist
+const uploadDir = path.join(__dirname, "uploads/cover-images");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
 // Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Serve uploaded files
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // MongoDB Connection
 const connectDB = async () => {
@@ -24,9 +34,9 @@ const connectDB = async () => {
         useUnifiedTopology: true,
       }
     );
-    console.log("✅ MongoDB connected successfully");
+    console.log("MongoDB connected successfully");
   } catch (error) {
-    console.error("❌ MongoDB connection error:", error);
+    console.error("MongoDB connection error:", error);
     process.exit(1);
   }
 };
