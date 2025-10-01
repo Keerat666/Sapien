@@ -17,6 +17,7 @@ import Contributors from "./pages/Contributors";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import TrendingSection from "./components/TrendingSection";
+import MoveToTopButton from "./components/MoveToTopButton";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
+        <MoveToTopButton />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
