@@ -6,7 +6,7 @@ const PORT = 8009;
 const expressJSDocSwagger = require("express-jsdoc-swagger");
 const swaggerConfig = require("./docs/swagger-config");
 const healthRoutes = require("./routes/health");
-
+const mongo = require("./middlewares/connection")
 require('dotenv').config();
 
 app.use(cors())
