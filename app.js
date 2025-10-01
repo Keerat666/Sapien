@@ -10,6 +10,11 @@ const connectDB = require("./middleware/database");
 
 // Import routes
 const promptRoutes = require("./routes/promptRoutes");
+const healthRoutes = require("./routes/health");
+const commentsRoutes = require("./routes/comments");
+
+const expressJSDocSwagger = require("express-jsdoc-swagger");
+const swaggerConfig = require("./docs/swagger-config");
 
 const app = express();
 const PORT = 8009;
@@ -25,21 +30,29 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// Initialize Swagger
+expressJSDocSwagger(app)(swaggerConfig);
+
 // Serve uploaded files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Health check API
-app.use("/api/health", (req, res) => {
-  res.json({
-    status: "healthy",
-    message: "Hello from Sapien!",
-    timestamp: new Date().toISOString(),
-    database:
-      mongoose.connection.readyState === 1 ? "connected" : "disconnected",
-  });
+// Health check API (merged: custom + route version)
+app.use("/api/health", (req, res, next) => {
+  if (req.method === "GET") {
+    return res.json({
+      status: "healthy",
+      message: "Hello from Sapien!",
+      timestamp: new Date().toISOString(),
+      database:
+        mongoose.connection.readyState === 1 ? "connected" : "disconnected",
+    });
+  }
+  next();
 });
 
 // API Routes
+app.use("/api", healthRoutes);
+app.use("/api", commentsRoutes);
 app.use("/api/prompts", promptRoutes);
 
 // Serve static files from the React app

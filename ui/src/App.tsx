@@ -16,6 +16,7 @@ import SearchResults from "./pages/SearchResults";
 import Contributors from "./pages/Contributors";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import TrendingSection from "./components/TrendingSection";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/search" element={<SearchResults />} />
             <Route path="/contributors" element={<Contributors />} />
             <Route path="/about" element={<About />} />
+            <Route path="/trending" element={<TrendingSection />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

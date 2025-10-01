@@ -1,6 +1,8 @@
 import { TrendingUp, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import PromptCard from "./PromptCard";
+import Footer from "./Footer";
+import Navigation from "./Navigation";
 
 const TrendingSection = () => {
   const trendingPrompts = [
@@ -54,49 +56,50 @@ const TrendingSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full glass-hover mb-6">
-            <TrendingUp className="w-4 h-4 mr-2 text-primary" />
-            <span className="text-sm font-medium text-primary">Hot Right Now</span>
-          </div>
-          
-          <h2 className="text-4xl sm:text-5xl font-black mb-6">
-            <span className="text-gradient">Trending</span> Prompts
-          </h2>
-          
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover the most popular prompts that are transforming how people work with AI
-          </p>
-        </div>
+    <main>
+      <Navigation />
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center px-4 py-2 rounded-full glass-hover mb-6">
+              <TrendingUp className="w-4 h-4 mr-2 text-primary" />
+              <span className="text-sm font-medium text-primary">Hot Right Now</span>
+            </div>
 
-        {/* Trending Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {/* Featured Large Card */}
-          <div className="md:col-span-2 lg:col-span-1 lg:row-span-2">
-            <PromptCard 
-              {...trendingPrompts[0]} 
-              size="large"
-            />
-          </div>
-          
-          {/* Regular Cards */}
-          {trendingPrompts.slice(1).map((prompt, index) => (
-            <PromptCard key={prompt.id} {...prompt} />
-          ))}
-        </div>
+            <h2 className="text-4xl sm:text-5xl font-black mb-6">
+              <span className="text-gradient">Trending</span> Prompts
+            </h2>
 
-        {/* View All Button */}
-        <div className="text-center">
-          <Button className="btn-hero group">
-            View All Trending
-            <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Discover the most popular prompts that are transforming how people work with AI
+            </p>
+          </div>
+
+          {/* Trending Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            {/* Featured Large Card */}
+            <div className="md:col-span-2 lg:col-span-1 lg:row-span-2">
+              <PromptCard {...trendingPrompts[0]} size="large" />
+            </div>
+
+            {/* Regular Cards */}
+            {trendingPrompts.slice(1).map((prompt, index) => (
+              <PromptCard key={prompt.id} {...prompt} />
+            ))}
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center">
+            <Button className="btn-hero group">
+              View All Trending
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </main>
   );
 };
 

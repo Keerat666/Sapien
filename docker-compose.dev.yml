@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8009:8009"
+    environment:
+      - NODE_ENV=development
+      - mongoPath=${MONGO_PATH:-mongodb://mongo:27017/autopilot}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+    networks:
+      - app-network
+    command: npm run test
+
+  frontend:
+    build:
+      context: ./ui
+      dockerfile: ../Dockerfile.frontend.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+    networks:
+      - app-network
+    command: npm run dev
+
+  mongo:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_dev_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USERNAME:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD:-password}
+      - MONGO_INITDB_DATABASE=${MONGO_DB_NAME:-autopilot}
+    networks:
+      - app-network
+
+volumes:
+  mongo_dev_data:
+
+networks:
+  app-network:
+    driver: bridge

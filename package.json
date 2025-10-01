@@ -20,6 +20,7 @@
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "express-formidable": "^1.2.0",
+        "express-jsdoc-swagger": "^1.8.0",
         "express-session": "^1.17.1",
         "extract-json-from-string": "^1.0.1",
         "mongoose": "^5.11.11",
