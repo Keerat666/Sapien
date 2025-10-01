@@ -6,6 +6,7 @@ const PORT = 8009;
 const expressJSDocSwagger = require("express-jsdoc-swagger");
 const swaggerConfig = require("./docs/swagger-config");
 const healthRoutes = require("./routes/health");
+const commentsRoutes = require("./routes/comments");
 const mongo = require("./middlewares/connection")
 require('dotenv').config();
 
@@ -16,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 expressJSDocSwagger(app)(swaggerConfig);
 
 app.use("/api", healthRoutes);
+app.use("/api", commentsRoutes);
 
 
 // Serve static files from the React app
