@@ -3,6 +3,7 @@
 This is the **frontend** for [Sapien](../README.md) — an open-source Prompt Management & Discovery Platform.  
 Built with modern tools to make contributing fast and fun 🚀  
 
+We also have a contributor page. Feel free to add your name in the contributers.tsx file located in the components folder if you have contributed to the project in any way.
 ---
 
 ## 🛠 Tech Stack
