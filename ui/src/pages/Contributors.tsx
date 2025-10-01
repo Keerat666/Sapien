@@ -13,9 +13,16 @@ const contributors = [
   },
   {
     name: 'Mehedi Hasan Khairul',
-    githubId: 'mehedi-hasan-khairul',
+    githubId: 'mehedihasankhairul',
     role: 'Developer',
     avatar: 'https://avatars.githubusercontent.com/u/55708248?v=4',
+    
+  },
+  {
+    name: 'Krishna Awasthi',
+    githubId: 'opbot-xd',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/140143710?v=4',
     
   },
 ];
