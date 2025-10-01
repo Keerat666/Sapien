@@ -5,7 +5,7 @@ const expressJSDocSwagger = require("express-jsdoc-swagger");
 
 // Import configuration and middleware
 const swaggerConfig = require("./docs/swagger-config");
-const connectDB = require("./middlewares/connection"); // DB connection
+const connectDB = require("./config/database");
 const errorHandler = require("./middlewares/errorHandler");
 const notFound = require("./middlewares/notFound");
 
@@ -13,7 +13,7 @@ const notFound = require("./middlewares/notFound");
 const healthRoutes = require("./routes/health");
 const commentsRoutes = require("./routes/comments");
 const usersRoutes = require("./routes/users");
-const promptRoutes = require("./routes/promptRoutes");
+const promptRoutes = require("./routes/prompts");
 
 require("dotenv").config();
 
@@ -32,7 +32,7 @@ expressJSDocSwagger(app)(swaggerConfig);
 app.use("/api", healthRoutes);
 app.use("/api", commentsRoutes);
 app.use("/api", usersRoutes);
-app.use("/api/prompts", promptRoutes);
+app.use("/api", promptRoutes);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "ui/dist")));
