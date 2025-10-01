@@ -1,5 +1,6 @@
 import { Coffee, Heart, Github, Twitter, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -18,19 +19,39 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-gradient">Sapien</h3>
-            <p className="text-muted-foreground">
-              The ultimate marketplace for AI prompts and creative ideas.
-            </p>
+            <p className="text-muted-foreground">The ultimate marketplace for AI prompts and creative ideas.</p>
           </div>
 
           {/* Product */}
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Product</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Browse Prompts</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Categories</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Trending</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Top Rated</a></li>
+             
+                <li>
+                 <Link to="/browse">
+                  <a href="#" className="hover:text-primary transition-colors">
+                    Browse Prompts
+                  </a>
+                  </Link>
+                </li>
+              
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  Categories
+                </a>
+              </li>
+              <li>
+              <Link to="/trending">
+                <a href="#" className="hover:text-primary transition-colors">
+                  Trending
+                </a>
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  Top Rated
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -38,13 +59,30 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-semibold text-foreground">Community</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">Creators</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Guidelines</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Featured</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
+              <li>
+              <Link to="/contributors">
+                <a href="#" className="hover:text-primary transition-colors">
+                  Creators
+                </a>
+              </Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  Guidelines
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  Featured
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
-
         </div>
 
         {/* Bottom Section */}
@@ -52,7 +90,7 @@ const Footer = () => {
           <p className="text-muted-foreground text-sm">
             © 2024 Sapien. Made with <Heart className="w-4 h-4 inline text-red-400" /> for the AI community.
           </p>
-          
+
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
             <Button variant="ghost" size="sm" className="p-2 text-muted-foreground hover:text-primary">
               <Twitter className="w-5 h-5" />
