@@ -1,0 +1,20 @@
+# Development Dockerfile for backend
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Install nodemon globally for development
+RUN npm install -g nodemon
+
+# Copy source code (excluding ui folder)
+COPY . .
+RUN rm -rf ui
+
+EXPOSE 8009
+
+# Development command
+CMD ["npm", "run", "test"]
