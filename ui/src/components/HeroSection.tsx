@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Zap, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Users, Coffee, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -28,10 +28,10 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join thousands of creators in the ultimate marketplace for AI prompts. 
+          Join thousands of creators in the ultimate marketplace for AI prompts.
           Find inspiration, share your creativity, and monetize your ideas.
         </p>
-        
+
         {/* Personal Manager Features */}
         <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-4xl mx-auto">
           <div className="flex items-center px-4 py-2 glass-hover rounded-full">
@@ -49,19 +49,28 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-        <Link to="/browse">
-          <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon animate-pulse">
-            Browse Prompts
-            <ArrowRight className="ml-2 h-5 w-5" />
+        <div className="flex flex-col items-center gap-8 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/browse">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon animate-pulse">
+                Browse Prompts
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="btn-glass text-lg px-8 py-4">
+                Start Creating
+              </Button>
+            </Link>
+          </div>
+
+          <Button className="btn-accent group text-lg px-8 py-4">
+            <Coffee className="w-4 h-4 mr-2" />
+            Buy Me a Coffee
+            <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
           </Button>
-        </Link>
-        <Link to="/signup">
-          <Button className="btn-glass text-lg px-8 py-4">
-            Start Creating
-          </Button>
-          </Link>
         </div>
+
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
@@ -72,7 +81,7 @@ const HeroSection = () => {
             <div className="text-3xl font-bold text-foreground mb-1">10K+</div>
             <div className="text-muted-foreground">Active Creators</div>
           </div>
-          
+
           <div className="glass-hover p-6 rounded-2xl card-hover">
             <div className="flex items-center justify-center mb-3">
               <Zap className="w-8 h-8 text-accent" />
@@ -80,7 +89,7 @@ const HeroSection = () => {
             <div className="text-3xl font-bold text-foreground mb-1">50K+</div>
             <div className="text-muted-foreground">Prompts Shared</div>
           </div>
-          
+
           <div className="glass-hover p-6 rounded-2xl card-hover">
             <div className="flex items-center justify-center mb-3">
               <Sparkles className="w-8 h-8 text-primary" />
