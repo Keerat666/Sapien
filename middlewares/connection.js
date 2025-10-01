@@ -1,14 +1,33 @@
-var mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-//Set up default mongoose connection
-var conn = mongoose.connect(process.env.mongoPath, { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true })
-    .then((db) => {
-        console.log('Database connected');
+const connectDB = async () => {
+  try {
+    await mongoose.connect(
+      process.env.MONGODB_URI || "mongodb://localhost:27017/prompts_db",
+      {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }
+    );
+    console.log("MongoDB connected successfully");
+    return mongoose.connection;
+  } catch (error) {
+    console.error("MongoDB connection error:", error);
+    throw error;
+  }
+};
 
-        return db
-    })
-    .catch((error) => {
-        console.log('Error connecting to database' + error);
-    });
+// Handle connection events
+mongoose.connection.on("connected", () => {
+  console.log("Mongoose connected to DB");
+});
 
-module.exports = conn
+mongoose.connection.on("error", (err) => {
+  console.error("Mongoose connection error:", err);
+});
+
+mongoose.connection.on("disconnected", () => {
+  console.log("Mongoose disconnected");
+});
+
+module.exports = connectDB;
