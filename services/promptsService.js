@@ -279,6 +279,36 @@ class PromptsService {
   }
 
   /**
+   * Get recent prompts with pagination
+   */
+  async getRecentPrompts(options = {}) {
+    const { page = 1, limit = 10 } = options;
+
+    const query = { isActive: true };
+    const skip = (parseInt(page) - 1) * parseInt(limit);
+    const sort = { createdAt: -1 }; // Sort by creation date, newest first
+
+    const [prompts, total] = await Promise.all([
+      Prompt.find(query)
+        .sort(sort)
+        .skip(skip)
+        .limit(parseInt(limit))
+        .lean(),
+      Prompt.countDocuments(query)
+    ]);
+
+    return {
+      prompts,
+      pagination: {
+        page: parseInt(page),
+        limit: parseInt(limit),
+        total,
+        pages: Math.ceil(total / parseInt(limit))
+      }
+    };
+  }
+
+  /**
    * Search prompts
    */
   async searchPrompts(query, options = {}) {

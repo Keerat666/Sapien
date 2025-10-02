@@ -357,6 +357,28 @@ class PromptsController {
   }
 
   /**
+   * Get recent prompts
+   */
+  async getRecentPrompts(req, res) {
+    try {
+      const { page, limit } = req.query;
+      const result = await promptsService.getRecentPrompts({ page, limit });
+
+      res.json({
+        success: true,
+        data: result.prompts,
+        pagination: result.pagination
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        error: "Failed to fetch recent prompts",
+        details: error.message
+      });
+    }
+  }
+
+  /**
    * Search prompts
    */
   async searchPrompts(req, res) {

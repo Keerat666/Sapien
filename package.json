@@ -5,7 +5,9 @@
     "main": "app.js",
     "scripts": {
         "test": "nodemon app.js",
-        "start": "node ./bin/www"
+        "start": "node ./bin/www",
+        "seed:prompts": "node scripts/seedPrompts.js",
+        "seed:prompts:clear": "node scripts/seedPrompts.js --clear"
     },
     "keywords": [
         "Sapien"

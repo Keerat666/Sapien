@@ -29,6 +29,17 @@ const { upload, handleUploadError } = require("../middlewares/upload");
 router.get("/prompts", promptsController.getAllPrompts);
 
 /**
+ * GET /api/prompts/recent
+ * @summary Get recent prompts sorted by creation date
+ * @tags Prompts
+ * @param {number} page.query - Page number (default: 1)
+ * @param {number} limit.query - Items per page (default: 10)
+ * @return {object} 200 - Array of recent prompts with pagination
+ * @return {object} 500 - Server error
+ */
+router.get("/prompts/recent", promptsController.getRecentPrompts);
+
+/**
  * GET /api/prompts/search
  * @summary Search prompts
  * @tags Prompts
