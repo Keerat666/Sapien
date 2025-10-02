@@ -106,7 +106,7 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
             </AvatarFallback>
           </Avatar>
           
-          <div className="flex-1">
+          <div className="flex-1 min-w-0 overflow-hidden">
             <div className="flex items-center gap-2 mb-2">
               <span className="font-medium text-foreground">
                 {comment.author.name}
@@ -116,7 +116,7 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
               </span>
             </div>
             
-            <p className="text-foreground mb-3 leading-relaxed">
+            <p className="text-foreground mb-3 leading-relaxed break-all overflow-wrap-anywhere whitespace-pre-wrap max-w-full">
               {comment.content}
             </p>
             
