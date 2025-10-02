@@ -6,7 +6,7 @@ const path = require("path");
 require("dotenv").config();
 
 // Import database connection
-const connectDB = require("./middleware/database");
+const connectDB = require("./middlewares/connection");
 
 // Import routes
 const promptRoutes = require("./routes/promptRoutes");
