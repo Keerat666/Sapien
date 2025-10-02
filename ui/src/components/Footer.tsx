@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-background-secondary border-t border-glass-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -20,10 +24,8 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
              
                 <li>
-                 <Link to="/browse">
-                  <a href="#" className="hover:text-primary transition-colors">
-                    Browse Prompts
-                  </a>
+                  <Link to="/browse" className="hover:text-primary transition-colors" onClick={handleScrollToTop}>
+                  Browse Prompts
                   </Link>
                 </li>
               
