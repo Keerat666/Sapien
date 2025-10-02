@@ -107,16 +107,16 @@ const HeroSection = () => {
             <div className="flex items-center justify-center mb-3">
               <Zap className="w-8 h-8 text-accent" />
             </div>
-            <div className="text-3xl font-bold text-foreground mb-1">50K+</div>
-            <div className="text-muted-foreground">Prompts Shared</div>
+            <div className="text-3xl font-bold text-foreground mb-1">20K+</div>
+            <div className="text-muted-foreground">Generated Prompts</div>
           </div>
 
           <div className="glass-hover p-6 rounded-2xl card-hover">
             <div className="flex items-center justify-center mb-3">
               <Sparkles className="w-8 h-8 text-primary" />
             </div>
-            <div className="text-3xl font-bold text-foreground mb-1">1M+</div>
-            <div className="text-muted-foreground">Ideas Generated</div>
+            <div className="text-3xl font-bold text-foreground mb-1">22k+</div>
+            <div className="text-muted-foreground">Community Interactions</div>
           </div>
         </div>
       </div>
