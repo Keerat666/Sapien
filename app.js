@@ -12,6 +12,7 @@ const connectDB = require("./middleware/database");
 const promptRoutes = require("./routes/promptRoutes");
 const healthRoutes = require("./routes/health");
 const commentsRoutes = require("./routes/comments");
+const authRoutes = require('./routes/auth');
 
 const expressJSDocSwagger = require("express-jsdoc-swagger");
 const swaggerConfig = require("./docs/swagger-config");
@@ -54,6 +55,7 @@ app.use("/api/health", (req, res, next) => {
 app.use("/api", healthRoutes);
 app.use("/api", commentsRoutes);
 app.use("/api/prompts", promptRoutes);
+app.use("/api",authRoutes);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "ui/dist")));
