@@ -33,8 +33,8 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join thousands of creators in the ultimate marketplace for AI prompts.
-          Find inspiration, share your creativity, and monetize your ideas.
+          Join thousands of creators in the ultimate public marketplace for AI prompts.
+          Discover inspiration, share your creativity, and track the evolution of your prompts through versioning.
         </p>
 
         {/* Personal Manager Features */}
