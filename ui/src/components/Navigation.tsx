@@ -50,9 +50,10 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <Sparkles className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold gradient-text">Sapien</span>
+          <Link to="/" className="flex items-center space-x-6  pt-2">
+            {/* <Sparkles className="h-8 w-8 text-primary" />
+            <span className="text-xl font-bold gradient-text">Sapien</span> */}
+            <img width="140" src="./logo3.png" alt="logo" />
           </Link>
 
           {/* Desktop Navigation */}
