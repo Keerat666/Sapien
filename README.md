@@ -3,6 +3,8 @@
 [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-Friendly-orange.svg)](https://hacktoberfest.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Maintained by Sapien Team](https://img.shields.io/badge/maintained%20by-Sapien%20Team-blueviolet.svg)](./CONTRIBUTORS.md)
+
 
 Sapien is an **open-source Prompt Management & Discovery Platform**.  
 It allows you to **publish, rate, review, and organize prompts** with features like version control, private/public prompts, and a social layer for the AI community.
@@ -220,7 +222,20 @@ You are free to use, modify, and distribute this software with attribution.
 ## 👥 Contributors
 
 Thanks goes to these wonderful people:
-<a href="https://github.com/sapien/graphs/contributors"> <img src="https://contrib.rocks/image?repo=sapien" /> </a>
+<a href="https://github.com/Keerat666/Sapien/graphs/contributors"> <img src="https://contrib.rocks/image?repo=Keerat666/Sapien" alt="Contributors graph"/> </a>
+
+## 🧑‍🤝‍🧑 Maintainers & Contributors
+
+<div align="left">
+
+<a href="https://github.com/keerat666" title="Gurkeerat (Maintainer)">
+	<img src="https://avatars.githubusercontent.com/u/18071315?v=4" alt="Gurkeerat" width="64" height="64" style="border-radius:50%; margin-right:8px;" />
+</a>
+<a href="https://github.com/Devash422" title="Devansh Verma (Contributor)">
+	<img src="https://avatars.githubusercontent.com/u/65439049?v=4" alt="Devansh Verma" width="64" height="64" style="border-radius:50%; margin-right:8px;" />
+</a>
+
+</div>
 
 ## 👤 Maintainer
 
