@@ -6,9 +6,8 @@
  */
 const express = require("express");
 const router = express.Router();
+const healthController = require("../controllers/healthController");
 
-router.get("/health", (req, res) => {
-  res.json({ status: "ok", timestamp: new Date(), message : "Hello from Sapien!" });
-});
+router.get("/health", healthController.getHealth);
 
 module.exports = router;
