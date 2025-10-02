@@ -25,6 +25,25 @@ const contributors = [
     avatar: 'https://avatars.githubusercontent.com/u/140143710?v=4',
     
   },
+  {
+    name: 'Devansh Verma',
+    githubId: 'Devansh422',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/65439049?v=4',
+    
+  },
+  {
+    name: 'Deepesh Kumar',
+    githubId: 'akadeepesh',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/100466756?v=4',
+  },
+  {
+    name: 'Sajith Rajan P',
+    githubId: 'Sajithrajan03',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/93327106?v=4',
+  },
 ];
 
 const Contributors = () => {

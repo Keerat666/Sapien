@@ -3,6 +3,8 @@
 [![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-Friendly-orange.svg)](https://hacktoberfest.com/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Maintained by Sapien Team](https://img.shields.io/badge/maintained%20by-Sapien%20Team-blueviolet.svg)](./CONTRIBUTORS.md)
+
 
 Sapien is an **open-source Prompt Management & Discovery Platform**.  
 It allows you to **publish, rate, review, and organize prompts** with features like version control, private/public prompts, and a social layer for the AI community.
@@ -217,11 +219,16 @@ To contribute:
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this software with attribution.
 
-## 👥 Contributors
+## 🧑‍🤝‍🧑 Contributors
 
-Thanks goes to these wonderful people:
-<a href="https://github.com/sapien/graphs/contributors"> <img src="https://contrib.rocks/image?repo=sapien" /> </a>
+<div align="left">
+
+<a href="https://github.com/keerat666/sapien/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=keerat666/sapien" />
+</a>
+
+</div>
 
 ## 👤 Maintainer
 
-Built with ❤️ by Keerat
+An original idea by [keerat666](https://github.com/keerat666), developed further and faster with the help of wonderful contributors.

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Sparkles, Zap, Users } from "lucide-react";
+import { ArrowRight, Sparkles, Zap, Users, Coffee, Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -66,22 +66,32 @@ const HeroSection = () => {
         </div>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-          <Link to="/browse">
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon animate-pulse"
-            >
-              Browse Prompts
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-          <Link to="/signup">
-            <Button className="btn-glass text-lg px-8 py-4">
-              Start Creating
-            </Button>
-          </Link>
-        </div>
+        <div className="flex flex-col items-center gap-8 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/browse">
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon animate-pulse"
+              >
+                Browse Prompts
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="btn-glass text-lg px-8 py-4">
+                Start Creating
+              </Button>
+            </Link>
+          </div>
+
+          <Button className="btn-accent group text-lg px-8 py-4">
+            <Coffee className="w-4 h-4 mr-2" />
+            Buy Me a Coffee
+            <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
+          </Button>
+         </div>
+       </div>
+
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
