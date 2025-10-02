@@ -8,7 +8,10 @@ const HeroSection = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "2s" }}
+        ></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-primary/20 rounded-full blur-2xl animate-pulse-slow"></div>
       </div>
 
@@ -16,7 +19,9 @@ const HeroSection = () => {
         {/* Badge */}
         <div className="inline-flex items-center px-4 py-2 rounded-full glass-hover mb-8 animate-glow">
           <Sparkles className="w-4 h-4 mr-2 text-accent" />
-          <span className="text-sm font-medium text-accent">Welcome to the Future of AI Prompts</span>
+          <span className="text-sm font-medium text-accent">
+            Welcome to the Future of AI Prompts
+          </span>
         </div>
 
         {/* Main Heading */}
@@ -36,15 +41,27 @@ const HeroSection = () => {
         <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-4xl mx-auto">
           <div className="flex items-center px-4 py-2 glass-hover rounded-full">
             <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></div>
-            <span className="text-sm font-medium text-muted-foreground">Manage prompts in one place</span>
+            <span className="text-sm font-medium text-muted-foreground">
+              Manage prompts in one place
+            </span>
           </div>
           <div className="flex items-center px-4 py-2 glass-hover rounded-full">
-            <div className="w-2 h-2 bg-accent rounded-full mr-3 animate-pulse" style={{ animationDelay: "1s" }}></div>
-            <span className="text-sm font-medium text-muted-foreground">Version control & iterations</span>
+            <div
+              className="w-2 h-2 bg-accent rounded-full mr-3 animate-pulse"
+              style={{ animationDelay: "1s" }}
+            ></div>
+            <span className="text-sm font-medium text-muted-foreground">
+              Version control & iterations
+            </span>
           </div>
           <div className="flex items-center px-4 py-2 glass-hover rounded-full">
-            <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse" style={{ animationDelay: "2s" }}></div>
-            <span className="text-sm font-medium text-muted-foreground">Public & private prompts</span>
+            <div
+              className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"
+              style={{ animationDelay: "2s" }}
+            ></div>
+            <span className="text-sm font-medium text-muted-foreground">
+              Public & private prompts
+            </span>
           </div>
         </div>
 
@@ -52,7 +69,10 @@ const HeroSection = () => {
         <div className="flex flex-col items-center gap-8 mb-16">
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link to="/browse">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon animate-pulse">
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-neon animate-pulse"
+              >
                 Browse Prompts
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -64,13 +84,14 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <Button className="btn-accent group text-lg px-8 py-4">
-            <Coffee className="w-4 h-4 mr-2" />
-            Buy Me a Coffee
-            <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
-          </Button>
+          <Link to="https://buymeacoffee.com/keerat">
+            <Button className="btn-accent group text-lg px-8 py-4">
+              <Coffee className="w-4 h-4 mr-2" />
+              Buy Me a Coffee
+              <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
+            </Button>
+          </Link>
         </div>
-
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
