@@ -6,17 +6,44 @@ import { Button } from '@/components/ui/button';
 
 const contributors = [
   {
-    name: 'Gurkeerat',
-    githubId: 'keerat666',
-    role: 'Maintainer',
-    avatar: 'https://avatars.githubusercontent.com/u/18071315?v=4',
+    name: "Gurkeerat",
+    githubId: "keerat666",
+    role: "Maintainer",
+    avatar: "https://avatars.githubusercontent.com/u/18071315?v=4",
+  },
+  {
+    name: 'Mehedi Hasan Khairul',
+    githubId: 'mehedihasankhairul',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/55708248?v=4',
+    
+  },
+  {
+    name: 'Krishna Awasthi',
+    githubId: 'opbot-xd',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/140143710?v=4',
+    
   },
   {
     name: 'Devansh Verma',
-    githubId: 'Devash422',
-    role: 'Contributor',
+    githubId: 'Devansh422',
+    role: 'Developer',
     avatar: 'https://avatars.githubusercontent.com/u/65439049?v=4',
-  }
+    
+  },
+  {
+    name: 'Deepesh Kumar',
+    githubId: 'akadeepesh',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/100466756?v=4',
+  },
+  {
+    name: 'Sajith Rajan P',
+    githubId: 'Sajithrajan03',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/93327106?v=4',
+  },
 ];
 
 const Contributors = () => {

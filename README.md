@@ -219,24 +219,16 @@ To contribute:
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute this software with attribution.
 
-## 👥 Contributors
-
-Thanks goes to these wonderful people:
-<a href="https://github.com/Keerat666/Sapien/graphs/contributors"> <img src="https://contrib.rocks/image?repo=Keerat666/Sapien" alt="Contributors graph"/> </a>
-
-## 🧑‍🤝‍🧑 Maintainers & Contributors
+## 🧑‍🤝‍🧑 Contributors
 
 <div align="left">
 
-<a href="https://github.com/keerat666" title="Gurkeerat (Maintainer)">
-	<img src="https://avatars.githubusercontent.com/u/18071315?v=4" alt="Gurkeerat" width="64" height="64" style="border-radius:50%; margin-right:8px;" />
-</a>
-<a href="https://github.com/Devash422" title="Devansh Verma (Contributor)">
-	<img src="https://avatars.githubusercontent.com/u/65439049?v=4" alt="Devansh Verma" width="64" height="64" style="border-radius:50%; margin-right:8px;" />
+<a href="https://github.com/keerat666/sapien/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=keerat666/sapien" />
 </a>
 
 </div>
 
 ## 👤 Maintainer
 
-Built with ❤️ by Keerat
+An original idea by [keerat666](https://github.com/keerat666), developed further and faster with the help of wonderful contributors.
