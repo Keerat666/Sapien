@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-36">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-36">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
@@ -33,11 +33,11 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-          Join thousands of creators in the ultimate marketplace for AI prompts.
-          Find inspiration, share your creativity, and monetize your ideas.
+          Join thousands of creators in the ultimate public marketplace for AI prompts.
+          Discover inspiration, share your creativity, and track the evolution of your prompts through versioning.
         </p>
 
-        {/* Personal Manager Features */}
+        {/* Features */}
         <div className="flex flex-wrap justify-center gap-6 mb-12 max-w-4xl mx-auto">
           <div className="flex items-center px-4 py-2 glass-hover rounded-full">
             <div className="w-2 h-2 bg-primary rounded-full mr-3 animate-pulse"></div>
@@ -92,7 +92,6 @@ const HeroSection = () => {
             </Button>
           </Link>
         </div>
-      </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
