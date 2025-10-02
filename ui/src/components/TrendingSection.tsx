@@ -98,7 +98,6 @@ const TrendingSection = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 };
