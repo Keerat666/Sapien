@@ -11,6 +11,7 @@ const notFound = require("./middlewares/notFound");
 
 // Import routes
 const healthRoutes = require("./routes/health");
+const homeRoutes = require("./routes/home");
 const commentsRoutes = require("./routes/comments");
 const usersRoutes = require("./routes/users");
 const promptRoutes = require("./routes/prompts");
@@ -30,6 +31,7 @@ expressJSDocSwagger(app)(swaggerConfig);
 
 // API Routes
 app.use("/api", healthRoutes);
+app.use("/api", homeRoutes);
 app.use("/api", commentsRoutes);
 app.use("/api", usersRoutes);
 app.use("/api", promptRoutes);
