@@ -96,14 +96,14 @@ const EditProfileDialog = ({ open, onOpenChange }: EditProfileDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px] glass-card">
+      <DialogContent className="sm:max-w-[425px] glass-card overflow-hidden">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-foreground">
             Edit Profile
           </DialogTitle>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
+        <div className="space-y-6 h-full overflow-wrap py-4">
           {/* Avatar Section */}
           <div className="flex flex-col items-center space-y-4">
             <div className="relative">
@@ -166,10 +166,11 @@ const EditProfileDialog = ({ open, onOpenChange }: EditProfileDialogProps) => {
                 onChange={(e) => setFormData(prev => ({ ...prev, username: e.target.value }))}
                 placeholder="Enter your username"
                 className="mt-1"
+                maxLength={80}
               />
             </div>
 
-            <div>
+            <div style={{ width: '100%', maxWidth: '377px', overflow: 'hidden' }}>
               <Label htmlFor="bio" className="text-sm font-medium text-foreground">
                 Bio
               </Label>
@@ -180,6 +181,15 @@ const EditProfileDialog = ({ open, onOpenChange }: EditProfileDialogProps) => {
                 placeholder="Tell us about yourself..."
                 rows={3}
                 className="mt-1 resize-none"
+                style={{ 
+                  width: '100%',
+                  maxWidth: '100%',
+                  wordBreak: 'break-all',
+                  overflowWrap: 'break-word',
+                  whiteSpace: 'pre-wrap',
+                  overflow: 'hidden',
+                  boxSizing: 'border-box'
+                }}
                 maxLength={160}
               />
               <p className="text-xs text-muted-foreground mt-1">
@@ -189,7 +199,7 @@ const EditProfileDialog = ({ open, onOpenChange }: EditProfileDialogProps) => {
           </div>
 
           {/* Preview Section */}
-          <div className="p-4 rounded-lg bg-muted/20 border border-border">
+          <div className="p-4 rounded-lg bg-muted/20 border border-border" style={{ maxWidth: '377px', overflow: 'hidden' }}>
             <Label className="text-sm font-medium text-foreground mb-3 block">
               Preview
             </Label>
@@ -213,7 +223,7 @@ const EditProfileDialog = ({ open, onOpenChange }: EditProfileDialogProps) => {
                   @{formData.username}
                 </p>
                 {formData.bio && (
-                  <p className="text-sm text-muted-foreground mt-1 line-clamp-2">
+                  <p className="text-sm text-muted-foreground mt-1 line-clamp-2" style={{ wordBreak: 'break-all', overflowWrap: 'break-word' }}>
                     {formData.bio}
                   </p>
                 )}
