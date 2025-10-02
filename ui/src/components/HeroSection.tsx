@@ -84,14 +84,15 @@ const HeroSection = () => {
             </Link>
           </div>
 
-          <Button className="btn-accent group text-lg px-8 py-4">
-            <Coffee className="w-4 h-4 mr-2" />
-            Buy Me a Coffee
-            <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
-          </Button>
-         </div>
-       </div>
-
+          <Link to="https://buymeacoffee.com/keerat">
+            <Button className="btn-accent group text-lg px-8 py-4">
+              <Coffee className="w-4 h-4 mr-2" />
+              Buy Me a Coffee
+              <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
+            </Button>
+          </Link>
+        </div>
+      </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto">
