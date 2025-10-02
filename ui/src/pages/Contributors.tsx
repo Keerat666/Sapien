@@ -44,6 +44,18 @@ const contributors = [
     role: 'Developer',
     avatar: 'https://avatars.githubusercontent.com/u/93327106?v=4',
   },
+  {
+    name: 'Laxman Rathod',
+    githubId: 'lra8dev',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/131651450?v=4',
+  },
+  {
+    name: 'Vijayendher Gatla',
+    githubId: 'wizaye',
+    role: 'Developer',
+    avatar: 'https://avatars.githubusercontent.com/u/117831928?v=4',
+  },
 ];
 
 const Contributors = () => {
