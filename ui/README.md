@@ -36,3 +36,4 @@ This runs a local development server with hot reloading & instant preview.
 UI is Hacktoberfest-friendly! 🌱
 Help us improve layouts, components, and overall design polish.
 Check open issues or create your own ideas!
+We welcome contributions of all kinds — code, design, documentation, and more.
