@@ -13,6 +13,8 @@ interface CommentSectionProps {
   promptId: string;
 }
 
+const MAX_COMMENT_LENGTH = 1000;
+
 const CommentSection = ({ promptId }: CommentSectionProps) => {
   const [newComment, setNewComment] = useState('');
   const [replyTo, setReplyTo] = useState<string | null>(null);
@@ -156,12 +158,24 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
                   value={replyText}
                   onChange={(e) => setReplyText(e.target.value)}
                   className="mb-3 bg-background/50"
+                  maxLength={MAX_COMMENT_LENGTH}
                 />
+                <div className="flex justify-between items-center mb-3">
+                  <span className={`text-sm ${
+                    replyText.length > MAX_COMMENT_LENGTH * 0.9 
+                      ? replyText.length >= MAX_COMMENT_LENGTH 
+                        ? 'text-red-500' 
+                        : 'text-yellow-500'
+                      : 'text-muted-foreground'
+                  }`}>
+                    {replyText.length}/{MAX_COMMENT_LENGTH}
+                  </span>
+                </div>
                 <div className="flex gap-2">
                   <Button
                     size="sm"
                     onClick={() => handleSubmitReply(comment.id)}
-                    disabled={!replyText.trim()}
+                    disabled={!replyText.trim() || replyText.length > MAX_COMMENT_LENGTH}
                   >
                     Reply
                   </Button>
@@ -208,10 +222,22 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
                   className="mb-3 bg-background/50"
+                  maxLength={MAX_COMMENT_LENGTH}
                 />
+                <div className="flex justify-between items-center mb-3">
+                  <span className={`text-sm ${
+                    newComment.length > MAX_COMMENT_LENGTH * 0.9 
+                      ? newComment.length >= MAX_COMMENT_LENGTH 
+                        ? 'text-red-500' 
+                        : 'text-yellow-500'
+                      : 'text-muted-foreground'
+                  }`}>
+                    {newComment.length}/{MAX_COMMENT_LENGTH}
+                  </span>
+                </div>
                 <Button
                   onClick={handleSubmitComment}
-                  disabled={!newComment.trim()}
+                  disabled={!newComment.trim() || newComment.length > MAX_COMMENT_LENGTH}
                   className="bg-primary hover:bg-primary/90"
                 >
                   Post Comment
