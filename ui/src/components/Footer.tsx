@@ -6,14 +6,6 @@ const Footer = () => {
   return (
     <footer className="bg-background-secondary border-t border-glass-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Buy Me a Coffee Button */}
-        <div className="flex justify-center mb-12">
-          <Button className="btn-accent group">
-            <Coffee className="w-4 h-4 mr-2" />
-            Buy Me a Coffee
-            <Heart className="w-4 h-4 ml-2 text-red-400 group-hover:animate-pulse" />
-          </Button>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}

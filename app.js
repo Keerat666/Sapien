@@ -5,7 +5,7 @@ const expressJSDocSwagger = require("express-jsdoc-swagger");
 
 // Import configuration and middleware
 const swaggerConfig = require("./docs/swagger-config");
-const connectDB = require("./config/database"); 
+const connectDB = require("./config/database");
 const errorHandler = require("./middlewares/errorHandler");
 const notFound = require("./middlewares/notFound");
 
@@ -14,6 +14,8 @@ const healthRoutes = require("./routes/health");
 const commentsRoutes = require("./routes/comments");
 const promptRoutes = require("./routes/prompts");
 const authRoutes = require('./routes/auth'); 
+const usersRoutes = require("./routes/users");
+
 
 require("dotenv").config();
 
@@ -33,6 +35,7 @@ app.use("/api", healthRoutes);
 app.use("/api", commentsRoutes);
 app.use("/api/prompts", promptRoutes);
 app.use("/api", authRoutes); 
+app.use("/api", usersRoutes);
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "ui/dist")));
@@ -49,7 +52,7 @@ app.use(errorHandler);
 // Start server only after DB connection
 const startServer = async () => {
   try {
-    await connectDB(); // initialize DB connection
+   await connectDB(); // ✅ initialize DB connection
     app.listen(PORT, () => {
       console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`);
     });

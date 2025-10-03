@@ -13,13 +13,13 @@ const Feed = () => {
   const [activeTab, setActiveTab] = useState('recent');
 
   const getFilteredPrompts = () => {
-    // Apply tab filter
+    // Apply tab filter to mock prompts
     switch (activeTab) {
-      case 'trending':
-        return [...mockPrompts].sort((a, b) => (b.stars + b.views) - (a.stars + a.views));
-      case 'following':
-        // Mock: show prompts from followed users
-        return mockPrompts.filter(prompt => prompt.author.id !== user?.id);
+      case "trending":
+        return [...mockPrompts].sort((a, b) => b.stars + b.views - (a.stars + a.views));
+      case "following":
+        // Mock: show prompts from followed users (exclude own prompts)
+        return mockPrompts.filter((prompt) => prompt.author.id !== user?.id);
       default:
         return [...mockPrompts].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
     }

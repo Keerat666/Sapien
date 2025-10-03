@@ -5,7 +5,9 @@
     "main": "app.js",
     "scripts": {
         "test": "nodemon app.js",
-        "start": "node ./bin/www"
+        "start": "node ./bin/www",
+        "seed:prompts": "node scripts/seedPrompts.js",
+        "seed:prompts:clear": "node scripts/seedPrompts.js --clear"
     },
     "keywords": [
         "Sapien"
@@ -22,6 +24,7 @@
         "express-formidable": "^1.2.0",
         "express-jsdoc-swagger": "^1.8.0",
         "express-session": "^1.17.1",
+        "express-validator": "^7.0.1",
         "extract-json-from-string": "^1.0.1",
         "mongoose": "^5.11.11",
         "multer": "^1.4.2",
