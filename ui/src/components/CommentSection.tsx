@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback, memo } from 'react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -15,7 +15,7 @@ interface CommentSectionProps {
 
 const MAX_COMMENT_LENGTH = 1000;
 
-const CommentItem = ({ 
+const CommentItem = memo(({ 
   comment, 
   isReply = false, 
   parentId, 
@@ -32,7 +32,7 @@ const CommentItem = ({
   replyTo: string | null;
   setReplyTo: (id: string | null) => void;
   replyText: string;
-  setReplyText: (text: string) => void;
+  setReplyText: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   handleSubmitReply: (commentId: string) => Promise<void>;
   handleLikeComment: (commentId: string, isReply?: boolean, parentId?: string) => void;
 }) => {
@@ -104,7 +104,7 @@ const CommentItem = ({
                   ref={textareaRef}
                   placeholder="Write a reply..."
                   value={replyText}
-                  onChange={(e) => setReplyText(e.target.value)}
+                  onChange={setReplyText}
                   className="mb-3 bg-background/50"
                   maxLength={MAX_COMMENT_LENGTH}
                 />
@@ -130,10 +130,7 @@ const CommentItem = ({
                   <Button
                     variant="ghost"
                     size="sm"
-                    onClick={() => {
-                      setReplyTo(null);
-                      setReplyText('');
-                    }}
+                    onClick={() => setReplyTo(null)}
                   >
                     Cancel
                   </Button>
@@ -145,7 +142,7 @@ const CommentItem = ({
       </CardContent>
     </Card>
   );
-};
+});
 
 const CommentSection = ({ promptId }: CommentSectionProps) => {
   const [newComment, setNewComment] = useState('');
@@ -155,7 +152,23 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
   const { user } = useAuth();
   const { toast } = useToast();
 
-  const handleSubmitComment = async () => {
+  // Use useCallback to prevent unnecessary re-renders
+  const handleNewCommentChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setNewComment(e.target.value);
+  }, []);
+
+  const handleReplyTextChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setReplyText(e.target.value);
+  }, []);
+
+  const handleSetReplyTo = useCallback((id: string | null) => {
+    setReplyTo(id);
+    if (!id) {
+      setReplyText(''); // Clear reply text when closing reply
+    }
+  }, []);
+
+  const handleSubmitComment = useCallback(async () => {
     if (!newComment.trim() || !user) return;
 
     const comment: Comment = {
@@ -167,16 +180,16 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
       replies: []
     };
 
-    setComments([comment, ...comments]);
+    setComments(prevComments => [comment, ...prevComments]);
     setNewComment('');
     
     toast({
       title: "Comment posted",
       description: "Your comment has been added successfully.",
     });
-  };
+  }, [newComment, user, toast]);
 
-  const handleSubmitReply = async (commentId: string) => {
+  const handleSubmitReply = useCallback(async (commentId: string) => {
     if (!replyText.trim() || !user) return;
 
     const reply: Comment = {
@@ -187,7 +200,7 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
       likes: 0
     };
 
-    setComments(comments.map(comment => 
+    setComments(prevComments => prevComments.map(comment => 
       comment.id === commentId 
         ? { ...comment, replies: [...(comment.replies || []), reply] }
         : comment
@@ -200,11 +213,11 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
       title: "Reply posted",
       description: "Your reply has been added successfully.",
     });
-  };
+  }, [replyText, user, toast]);
 
-  const handleLikeComment = (commentId: string, isReply = false, parentId?: string) => {
+  const handleLikeComment = useCallback((commentId: string, isReply = false, parentId?: string) => {
     if (isReply && parentId) {
-      setComments(comments.map(comment => 
+      setComments(prevComments => prevComments.map(comment => 
         comment.id === parentId
           ? {
               ...comment,
@@ -217,13 +230,13 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
           : comment
       ));
     } else {
-      setComments(comments.map(comment =>
+      setComments(prevComments => prevComments.map(comment =>
         comment.id === commentId
           ? { ...comment, likes: comment.likes + 1 }
           : comment
       ));
     }
-  };
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -247,7 +260,7 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
                 <Textarea
                   placeholder="Share your thoughts about this prompt..."
                   value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
+                  onChange={handleNewCommentChange}
                   className="mb-3 bg-background/50"
                   maxLength={MAX_COMMENT_LENGTH}
                 />
@@ -290,9 +303,9 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
             <CommentItem 
               comment={comment}
               replyTo={replyTo}
-              setReplyTo={setReplyTo}
+              setReplyTo={handleSetReplyTo}
               replyText={replyText}
-              setReplyText={setReplyText}
+              setReplyText={handleReplyTextChange}
               handleSubmitReply={handleSubmitReply}
               handleLikeComment={handleLikeComment}
             />
@@ -305,9 +318,9 @@ const CommentSection = ({ promptId }: CommentSectionProps) => {
                 isReply={true}
                 parentId={comment.id}
                 replyTo={replyTo}
-                setReplyTo={setReplyTo}
+                setReplyTo={handleSetReplyTo}
                 replyText={replyText}
-                setReplyText={setReplyText}
+                setReplyText={handleReplyTextChange}
                 handleSubmitReply={handleSubmitReply}
                 handleLikeComment={handleLikeComment}
               />
